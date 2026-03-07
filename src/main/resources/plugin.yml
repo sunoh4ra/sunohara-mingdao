@@ -1,0 +1,33 @@
+name: SunoharaMingdao
+version: ${project.version}
+description: ${project.description}
+author: Sunohara Team
+main: com.sunohara.mingdao.MingdaoPlugin
+api-version: '1.21'
+
+commands:
+  mingdao:
+    description: 名刀命令 - 查看状态和管理
+    usage: /mingdao [status|reload|help]
+    aliases: [md]
+
+  mhelp:
+    description: 名刀帮助
+    usage: /mhelp
+
+permissions:
+  sunohara.mingdao.*:
+    description: 所有名刀权限
+    default: false
+
+  sunohara.mingdao.use:
+    description: 使用名刀救援功能
+    default: true
+
+  sunohara.mingdao.admin:
+    description: 管理员功能
+    default: op
+
+  sunohara.mingdao.help:
+    description: 查看帮助信息
+    default: true

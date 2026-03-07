@@ -1,0 +1,66 @@
+# Sunohara Mingdao - 配置文件
+
+# 功能启用
+enabled: true
+
+# 名刀模式
+# once: 玩家只能使用一次名刀（永久）
+# regenerate: 玩家可以多次使用，有冷却时间
+mingdao-mode: "regenerate"
+
+# 模式配置
+once-mode:
+  # 是否显示救援消息
+  show-message: true
+
+regenerate-mode:
+  # 冷却时间（分钟）- 每隔多久可以再次使用名刀
+  cooldown-minutes: 45
+  # 是否显示救援消息
+  show-message: true
+  # 是否显示冷却进度
+  show-cooldown: true
+
+# 恢复设置
+restoration:
+  # 恢复生命值（半颗心单位）
+  # 20 = 满血，10 = 半血
+  health-restore: 20
+  
+  # 恢复时的视觉效果
+  show-effect: true
+
+  # 药水效果/Buff配置
+  # 格式: 效果名称:持续时间(秒):等级
+  # 效果名称参考: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionEffectType.html
+  # 示例:
+  #   - ABSORPTION:120:3    -> 吸收 IV 效果，持续120秒
+  #   - DAMAGE_RESISTANCE:300:0  -> 抗性提升 I 效果，持续300秒
+  #   - REGENERATION:20:1    -> 恢复 II 效果，持续20秒
+  #   - FIRE_RESISTANCE:300:0 -> 火焰抗性 I 效果，持续300秒
+  buffs:
+    - "ABSORPTION:120:3"
+    - "DAMAGE_RESISTANCE:300:0"
+    - "REGENERATION:20:1"
+    - "FIRE_RESISTANCE:300:0"
+
+# 消息设置
+messages:
+  mingdao-saved: "§6[名刀] §a你被名刀救援了！§f获得了 {health} 点生命"
+  cooldown-remaining: "§6[名刀] §c名刀还需冷却 {remaining} 分钟"
+  already-used: "§6[名刀] §c你已经使用过名刀了！"
+  no-permission: "§c你没有使用名刀的权限"
+  disabled: "§c名刀插件已禁用"
+
+# 声音设置
+effects:
+  # 播放声音
+  play-sound: true
+  # 声音类型
+  sound: "ENTITY_TOTEM_USE"
+
+# 日志设置
+logging:
+  log-mingdao-usage: true
+  level: "INFO"
+
